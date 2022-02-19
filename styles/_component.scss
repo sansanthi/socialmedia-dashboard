@@ -1,0 +1,317 @@
+.theme-light {
+    background: $color-white-1;
+    color: $color-dark-blue;
+}
+.theme-dark {
+    color: $color-white;
+    background: $color-dark-blue-1;
+    small {
+        color: $color-desat-blue;
+    }
+    header {
+        background: $color-dark-blue-2;
+    }
+    .toggle-btn {        
+        background: linear-gradient(45deg, $color-bright-blue, $color-bright-green);
+    }
+    .toggle {
+        background: $color-dark-blue-1;
+        float: left;
+    }
+    .card, .stats-card {
+        background: $color-dark-blue-3;
+        &:hover {
+            background: $color-dark-blue-4;
+            cursor: pointer;
+        }
+    }
+
+    .today-dashboard h2 {
+        color: $color-white;
+    }
+    .title span {
+        color: $color-desat-blue;
+    }
+}
+.container {   
+    @include min-width(37rem) {
+        max-width: 90vw;
+        margin: 0 auto;
+    }
+    @include min-width(75rem) {
+        max-width: 86vw;
+        margin: 0 auto;
+    }
+    @include min-width(79rem) {
+        max-width: 80vw;
+
+    }
+}
+header {
+    background: $color-white-2;
+    padding: 2.5rem;
+    padding-bottom: 8.3rem;
+    margin-bottom: 4rem;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    @include min-width(61rem) {       
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+small {
+    color: $color-grayish-blue-2;
+    font-size: 1.2rem;
+}
+.heading-box {
+    @include min-width(61rem) {
+        @include flex-display(row);
+        @include flex-position(center, space-between);
+    }   
+}
+.heading {
+    border-bottom: 2px solid hsla(230,19%, 60%, 0.5);
+    small {
+        font-weight: 700;
+        display: inline-block;
+        margin-bottom: 2rem;
+        color: $color-grayish-blue-2;
+    }
+    @include min-width(61rem) {        
+        border-bottom: 0;
+
+        small {
+            margin-bottom: 0;
+        }
+    }
+}
+.heading-title {
+    font-size: 2.4rem;
+}
+
+// button toggle
+.toggle-mode {
+    padding: 1rem 0;    
+    @include flex-display(row);
+    @include flex-position($column: space-between);
+    
+    p {
+        font-weight: 700;
+        color: $color-grayish-blue-2;
+    }
+
+    @include min-width(61rem) {
+        padding: 0;
+        gap: 1.3rem;
+
+        p{
+            color: #848BAB;
+        }
+    }
+}
+.toggle-btn {
+    width: 4.8rem;
+    background: $color-pale-gray;
+    border: 1px solid transparent;
+    border-radius: 2.5rem;
+    padding: 0.3rem;
+    &:hover {
+        cursor: pointer;
+        background: linear-gradient(45deg, $color-bright-blue, $color-bright-green);
+    }
+}
+.toggle {
+    // display: inline-block;
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 50%;
+    background: $color-white;
+    color: $color-white;
+    float: right;
+}
+.dashboard {
+    padding: 2.4rem;
+    position: relative;
+    top: -7rem;
+    // @include flex-display(column, 2.4rem);
+    @include grid-display(2.4rem);
+    @include min-width(37rem) {
+        // @include flex-display(row, 2.4rem);
+        // @include flex-position(center, center);
+        // grid-template-columns: 40rem;
+        padding: 0;
+        // grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(25.5rem, 1fr));
+        @include grid-position(center, center);
+
+    }
+    @include min-width(61rem) {
+        // @include flex-display(row, 2.4rem);
+        // @include flex-position(center, center);
+        // grid-template-columns: repeat(2, 1fr);
+
+    }
+    @include min-width(75rem) {
+        // grid-template-columns: repeat(4, fit-content(34rem));
+       
+    }
+}
+.card, .stats-card {
+    background: $color-grayish-blue-1; 
+    &:hover {
+        cursor: pointer;
+        background: $color-grayish-blue-3;
+    }
+}
+.card {
+    text-align: center;
+    // background: $color-grayish-blue-1;
+    padding: 3.2rem 0 2.4rem 0; 
+    border-radius: 0.5rem;
+    // overflow: hidden;
+    @include flex-display(column, 2.4rem);
+    @include flex-position(center, center);
+    @include min-width(61rem) {
+        padding: 3.6rem 6rem 2.4rem 6rem; 
+    }
+}
+.fa-card {
+    border-top: 4px solid $color-facebook;
+}
+.twitter-card {
+    border-top: 4px solid $color-twitter;
+}
+.insta-card {
+    // border-top: 4px solid;
+    // border-image-slice: 1;
+    // border-width: 4px;
+    // mask: none;
+    // border-image-source: linear-gradient(to right, $color-bright-yellow, $color-light-pink, $color-bright-pink);  
+    // border-radius: 0.5rem;  
+    border-top: 4px solid transparent;
+    position: relative;
+    //background-clip: padding-box;
+    z-index: 0;
+
+    &::before {
+        content: " ";
+        height: 4px;
+        position: absolute;
+        top: 0; bottom: 0; left: 0; right: 0;
+        margin-top: -4px;
+        z-index: -1;
+        border-top-right-radius: 0.5rem;
+        border-top-left-radius: inherit;
+        background: linear-gradient(to right, $color-bright-yellow, $color-light-pink, $color-bright-pink); 
+    }
+}
+.youtube-card {
+    border-top: 4px solid $color-youtube;
+
+}
+.account {
+    @include flex-display(row, 0.8rem);
+    @include flex-position(center, center);
+}
+.followers {
+    small {
+        text-transform: uppercase;
+        letter-spacing: 0.5rem;
+    }
+}
+.follower-count {
+    font-size: 5.6rem;
+    font-weight: 700;
+    // color: $color-dark-blue;
+    line-height: 1;
+}
+.follower-rate, .rate {
+    @include flex-display(row, 0.4rem);
+    @include flex-position(center, center);
+
+    small {
+        font-weight: 700;
+    }
+}
+.up-icon, .up-icon + small {
+    color: $color-light-green;
+}
+
+.down-icon, .down-icon + small {
+    color: $color-bright-red;
+}
+
+
+// overview today
+.today-dashboard {
+    padding: 2.5rem;
+    @include min-width(61rem) {
+        padding: 0;
+    }
+}
+.stats {
+    @include grid-display(2.4rem);
+    justify-content: center;
+    align-content: center;
+    @include min-width(37rem) {
+        // grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(25.5rem, 1fr));
+    }
+    // @include min-width(61rem) {
+    //     grid-template-columns: repeat(3, 25.5rem);
+    // }
+    // @include min-width(75rem) {
+    //     grid-template-columns: repeat(4, 25.5rem);
+    // }
+    //@include grid-position(center, center);
+}
+.stats-card {
+    // background: $color-grayish-blue-1;    
+    padding: 2.4rem 1.9rem 2.4rem 2.4rem;
+    border-radius: 0.5rem;
+   
+}
+.title, .stats-count {
+    @include flex-display(row);
+    @include flex-position(center, space-between);
+}
+.title {
+    margin-bottom: 2.4rem;
+
+    span {
+        color: $color-grayish-blue-2;
+        font-size: 1.4rem;
+        font-weight: 700;
+    }
+}
+.count {
+    // color: $color-dark-blue;
+    font-size: 3.2rem;
+    font-weight: 700;
+}
+
+// icons
+.fa-facebook-square {
+    color: $color-facebook;
+}
+.fa-twitter {
+    color: $color-twitter;
+}
+.fa-instagram {
+    color: transparent;
+    background: radial-gradient(circle at 30% 107%, $color-bright-yellow 0%, $color-bright-yellow 5%, $color-light-pink 45%, $color-light-pink 60%, $color-bright-pink 90%);
+    background-clip: text;  
+    -webkit-background-clip: text;
+}
+.fa-youtube {
+    color: $color-youtube;
+    border-radius: 50%;
+}
+
+.today-dashboard {
+    h2 {
+        color: $color-grayish-blue-2;
+        font-size: 2.4rem;
+        margin-bottom: 2.7rem;
+    }
+}
