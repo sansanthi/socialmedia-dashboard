@@ -358,9 +358,16 @@ small {
   padding: 2.5rem;
 }
 
+.today-dashboard h2 {
+  color: #63687e;
+  font-size: 2.4rem;
+  margin-bottom: 2.7rem;
+}
+
 @media screen and (min-width: 61rem) {
   .today-dashboard {
     padding: 0;
+    padding-bottom: 7.5rem;
   }
 }
 
@@ -438,11 +445,5 @@ small {
 .fa-youtube {
   color: #c4032a;
   border-radius: 50%;
-}
-
-.today-dashboard h2 {
-  color: #63687e;
-  font-size: 2.4rem;
-  margin-bottom: 2.7rem;
 }
 /*# sourceMappingURL=main.css.map */

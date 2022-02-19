@@ -38,22 +38,6 @@ $color-grayish-blue-2: hsl(228, 12%, 44%);
 $color-grayish-blue-3: hsl(228, 33%, 91%);
 $color-dark-blue: hsl(230, 17%, 14%);
 
-@mixin flex-display($direction, $gap:null) {
-    display: flex;
-    flex-direction: $direction;
-    @if $gap !=null {
-        gap: $gap;
-    }
-}
-@mixin flex-position($row: null, $column: null) {
-    @if $row !=null {
-        align-items: $row;
-    }
-    @if $column !=null {
-        justify-content: $column;
-    }
-}
-
 * {
     margin: 0;
     padding: 0;
